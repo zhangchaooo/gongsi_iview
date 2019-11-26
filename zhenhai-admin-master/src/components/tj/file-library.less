@@ -1,0 +1,175 @@
+//素材图片选择
+.img-pick {
+    // max-height: 545px;
+    // min-height: 90px;
+    width: 464px;
+    // overflow: hidden;
+  
+    .ul-list {
+      overflow-y: auto;
+      overflow-x: hidden;
+      // max-height: 470px;
+      width: 108%;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      //justify-content: space-between;
+      flex-wrap: wrap;
+  
+      .img-item {
+        position: relative;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        float: left;
+        text-align: center;
+  
+        .item-label {
+          display: inline-block;
+          text-align: left;
+          cursor: pointer;
+          //margin: 0 0.5em 0 0;
+          border: 1px solid #e7e7e7;
+          width: 110px;
+  
+          .pic-box {
+            width: 100%;
+            height: 110px;
+            position: relative;
+            overflow: hidden;
+  
+            .pic {
+              display: block;
+              border-bottom: 1px solid #e7e7e7;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+  
+          .title {
+            display: block;
+            padding: 0 9px;
+            height: 32px;
+            line-height: 32px;
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+  
+  //图片选择面板
+  .img-pick .img-item.selected .selected-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .img-pick .img-item.selected .selected-mask-inner {
+    width: 110px;
+    height: 110px;
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+    background-color: #000;
+    filter: alpha(opacity=60);
+  }
+  
+  .img-pick .img-item.selected .selected-mask-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // background: transparent url('../../assets/wechat/selected.png') no-repeat 0 0;
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpBNUI5MEJDNTVCRjFFMzExOTg4QkNBRjhFMzQ3NTI1RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NEU0OEI5MUY2RUYxMUUzQkQ5Rjg4OUZFNjkzREU5OCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NEU0OEI5MEY2RUYxMUUzQkQ5Rjg4OUZFNjkzREU5OCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ0N0U2NkU3RUNGNkUzMTE5RjExRkVCRjQ0RkRBN0E0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkE1QjkwQkM1NUJGMUUzMTE5ODhCQ0FGOEUzNDc1MjVEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ff1a/wAAAk1JREFUeNrsmU1I3EAUx7Nb/KaK4nehKoignhREQdGDoCc96k281V4ExUtLTwX1pt7Uo3pSULDqRRQ/D36AaBEXsS30UkFBURDasm36H5pANuTFbDLZnYV58JPdTObNj83L28kaUFVVScQIKgkaUlyKS3Ep7joKwBaoizjK+rjAvAIh9X88gCZ9TGTpUvBNjYwn0MrGRS2VCrADykzH00G/qKVSDa5V61gGKSKWSi24JaTnQZKINd4A7gnpGfDCeL4o0i3gkZCeBAHzHBGk27VuYRVjVtIiiHeCn4T0sN3ceEp3g9+E9Lvn5sdLugeELYT/ggEnOYxvcsFH893rA32aoDn+gDdO8+gvCsG5lmARJPskPUhIh7WroEQj/hpcmhKtglTO0u+Jev4FuqLNx/5sEwk3QAYn6RFiDdZROtzk1D/xKyLxHsj0IMx68DiRm/XuNre59RdF4IJY4AjkuEgeBFNETvYt2ezlKhrf5IETYqFTkB9FYtaZZolcbD9S77X8zAeywSGxILsixQ6Sso60QORgO78aHveN1UFW07vEwl9AiU1Ctlf+RMz9Aap4dSlqIB2sEwLfQbmLORU826vdIOvjKzafXqXh3Jc2V+mr9vyoxEr8uXq90eqV3RcHxDkhh/cFd3G9Q8wRYnfgMzF2Bgr82vNE05OnVedx7LL3cxfXvwUnHEjvgyy/t8ZuJo3aSG9y3N/48iDxwUJ6DaTF6mHEy+Qhw956ycc9vCUBj/+8egsaQS8Ix/I3Oq/i8vdxKS7FpbgUj2/8E2AAC/UdgHorj1wAAAAASUVORK5CYII=') no-repeat 0 0;
+    width: 110px;
+    height: 110px;
+    vertical-align: middle;
+    display: inline-block;
+    background-position: 50% 50%;
+  }
+  
+  //功能tabs
+  .function-tabs {
+    .tabs-icon {
+      // background: url('../../assets/wechat/msg_tab.png');
+      margin-right: 3px;
+      margin-top: -2px;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .item {
+      float: none;
+      display: inline-block;
+      vertical-align: top;
+      width: 95px;
+      cursor: pointer;
+      .text {
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+      }
+      .news {
+        background-repeat: no-repeat;
+        background-position: 0px -240px;
+      }
+      .image {
+        background-repeat: no-repeat;
+        background-position: 0px -60px;
+      }
+      .audio {
+        background-position: 0 -180px;
+        background-repeat: no-repeat;
+      }
+      .video {
+        background-position: 0 -120px;
+        background-repeat: no-repeat;
+      }
+      .plugin {
+        background-position: 0 -421px;
+        background-repeat: no-repeat;
+      }
+      .list {
+        background-position: 0 -300px;
+        background-repeat: no-repeat;
+      }
+    }
+    .selected {
+      .text {
+        background-repeat: no-repeat;
+        background-position: 0px -30px;
+      }
+      .news {
+        background-repeat: no-repeat;
+        background-position: 0px -270px;
+      }
+      .image {
+        background-repeat: no-repeat;
+        background-position: 0px -90px;
+      }
+      .audio {
+        background-position: 0 -210px;
+        background-repeat: no-repeat;
+      }
+      .video {
+        background-position: 0 -150px;
+        background-repeat: no-repeat;
+      }
+      .plugin {
+        background-position: 0 -447px;
+        background-repeat: no-repeat;
+      }
+      .list {
+        background-position: 0 -330px;
+        background-repeat: no-repeat;
+      }
+      color: #222;
+    }
+  }
+  
